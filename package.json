@@ -1,0 +1,35 @@
+{
+  "name": "effect-mcp-example",
+  "version": "1.0.0",
+  "description": "Idiomatic Effect v4 stdio Model Context Protocol (MCP) server example",
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "bin": {
+    "effect-mcp-example": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "pretest": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "verify": "npm run typecheck && npm run build && npm test"
+  },
+  "dependencies": {
+    "@effect/platform-node": "4.1.5",
+    "effect": "4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0"
+  }
+}
